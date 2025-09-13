@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Game Currency - GameTopUp</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .tab-active {
+            border-bottom: 2px solid #3b82f6;
+            color: #3b82f6;
+        }
+        .game-option:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .package-option:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+        .selected-package {
+            background-color: rgba(59, 130, 246, 0.2);
+            border-color: #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">GameTopUp</span>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <a href="#" class="px-4 py-2 rounded-md text-sm font-medium text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
+                        <i data-feather="user" class="w-4 h-4 inline mr-1"></i> My Account
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Order Process -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+            <!-- Progress Steps -->
+            <div class="border-b border-gray-200">
+                <nav class="flex -mb-px">
+                    <div class="w-1/4 py-4 text-center border-b-2 border-blue-500 font-medium text-sm text-blue-600">
+                        <i data-feather="shopping-bag" class="w-5 h-5 mx-auto mb-1"></i>
+                        Select Package
+                    </div>
+                    <div class="w-1/4 py-4 text-center border-b-2 border-gray-200 font-medium text-sm text-gray-500">
+                        <i data-feather="user" class="w-5 h-5 mx-auto mb-1"></i>
+                        Account Info
+                    </div>
+                    <div class="w-1/4 py-4 text-center border-b-2 border-gray-200 font-medium text-sm text-gray-500">
+                        <i data-feather="credit-card" class="w-5 h-5 mx-auto mb-1"></i>
+                        Payment
+                    </div>
+                    <div class="w-1/4 py-4 text-center border-b-2 border-gray-200 font-medium text-sm text-gray-500">
+                        <i data-feather="check-circle" class="w-5 h-5 mx-auto mb-1"></i>
+                        Complete
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Select Game Package</h2>
+                
+                <!-- Game Selection -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-medium text-gray-800 mb-4">Choose Game</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                        <!-- Free Fire -->
+                        <div class="game-option bg-white border border-gray-200 rounded-lg p-4 text-center cursor-pointer transition-all duration-200">
+                            <div class="h-20 mx-auto mb-3 flex items-center justify-center">
+                                <img src="http://static.photos/gaming/200x200/1" alt="Free Fire" class="h-full object-contain">
+                            </div>
+                            <h4 class="font-medium text-gray-800">Free Fire</h4>
+                        </div>
+                        
+                        <!-- PUBG Mobile -->
+                        <div class="game-option bg-white border border-gray-200 rounded-lg p-4 text-center cursor-pointer transition-all duration-200">
+                            <div class="h-20 mx-auto mb-3 flex items-center justify-center">
+                                <img src="http://static.photos/gaming/200x200/2" alt="PUBG Mobile" class="h-full object-contain">
+                            </div>
+                            <h4 class="font-medium text-gray-800">PUBG Mobile</h4>
+                        </div>
+                        
+                        <!-- Mobile Legends -->
+                        <div class="game-option bg-white border border-gray-200 rounded-lg p-4 text-center cursor-pointer transition-all duration-200">
+                            <div class="h-20 mx-auto mb-3 flex items-center justify-center">
+                                <img src="http://static.photos/gaming/200x200/3" alt="Mobile Legends" class="h-full object-contain">
+                            </div>
+                            <h4 class="font-medium text-gray-800">Mobile Legends</h4>
+                        </div>
+                        
+                        <!-- Genshin Impact -->
+                        <div class="game-option bg-white border border-gray-200 rounded-lg p-4 text-center cursor-pointer transition-all duration-200">
+                            <div class="h-20 mx-auto mb-3 flex items-center justify-center">
+                                <img src="http://static.photos/gaming/200x200/4" alt="Genshin Impact" class="h-full object-contain">
+                            </div>
+                            <h4 class="font-medium text-gray-800">Genshin Impact</h4>
+                        </div>
+                        
+                        <!-- Call of Duty -->
+                        <div class="game-option bg-white border border-gray-200 rounded-lg p-4 text-center cursor-pointer transition-all duration-200">
+                            <div class="h-20 mx-auto mb-3 flex items-center justify-center">
+                                <img src="http://static.photos/gaming/200x200/5" alt="Call of Duty" class="h-full object-contain">
+                            </div>
+                            <h4 class="font-medium text-gray-800">Call of Duty</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Selection -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-medium text-gray-800 mb-4">Available Packages</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Package 1 -->
+                        <div class="package-option border border-gray-200 rounded-lg p-6 cursor-pointer transition-all duration-200">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-800">100 Diamonds</h4>
+                                    <p class="text-gray-600 text-sm mt-1">For Free Fire</p>
+                                </div>
+                                <span class="text-lg font-bold text-blue-600">$0.99</span>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-gray-200">
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li class="flex items-center">
+                                        <i data-feather="check" class="w-4 h-4 text-green-500 mr-2"></i>
+                                        Instant delivery
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i data-feather="check" class="w-4 h-4 text-green-500 mr-2"></i>
+                                        24/7 support
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i data-feather="check" class="w-4 h-4 text-green-500 mr-2"></i>
+                                        Secure payment
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Package 2 -->
+                        <div class="package-option border border-gray-200 rounded-lg p-6 cursor-pointer transition-all duration-200 selected-package">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-800">520 Diamonds</h4>
+                                    <p class="text-gray-600 text-sm mt-1">For Free Fire</p>
+                                </div>
+                                <span class="text-lg font-bold text-blue-600">$4.99</span>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-gray-200">
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li class="flex items-center">
+                                        <i data-feather="check" class="w-4 h-4 text-green-500 mr-2"></i>
+                                        Instant delivery
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i data-feather="check" class="w-4 h-4 text-green-500 mr-2"></i>
+                                        24/7 support
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i data-feather="check" class="w-4 h-4 text-green-500 mr-2"></i>
+                                        Secure payment
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Package 3 -->
+                        <div class="package-option border border-gray-200 rounded-lg p-6 cursor-pointer transition-all duration-200">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-800">1060 Diamonds</h4>
+                                    <p class="text-gray-600 text-sm mt-1">For Free Fire</p>
+                                </div>
+                                <span class="text-lg font-bold text-blue-600">$9.99</span>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-gray-200">
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li class="flex items-center">
+                                        <i data-feather="check" class="w-4 h-4 text-green-500 mr-2"></i>
+                                        Instant delivery
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i data-feather="check" class="w-4 h-4 text-green-500 mr-2"></i>
+                                        24/7 support
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i data-feather="check" class="w-4 h-4 text-green-500 mr-2"></i>
+                                        Secure payment
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next Step Button -->
+                <div class="flex justify-end">
+                    <a href="#" class="px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
+                        Continue to Account Info
+                        <i data-feather="arrow-right" class="w-4 h-4 inline ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        feather.replace();
+        
+        // Package selection
+        document.querySelectorAll('.package-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.package-option').forEach(opt => {
+                    opt.classList.remove('selected-package');
+                });
+                this.classList.add('selected-package');
+            });
+        });
+        
+        // Game selection
+        document.querySelectorAll('.game-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.game-option').forEach(opt => {
+                    opt.classList.remove('border-blue-500');
+                });
+                this.classList.add('border-blue-500');
+            });
+        });
+    </script>
+</body>
+</html>
