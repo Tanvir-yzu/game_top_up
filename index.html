@@ -29,7 +29,6 @@
     </style>
 </head>
 <body class="bg-gray-900 text-white">
-    <script src="https://auruads.com/cdn/ads.js?app_uid=8924"></script>
     <!-- Navigation -->
     <nav class="bg-gray-800 bg-opacity-90 backdrop-filter backdrop-blur-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -356,7 +355,27 @@
             </div>
         </div>
     </div>
+ <h1>Rewarded Ad Demo</h1>
+  <button id="watchAd">Watch Ad to Get Reward</button>
 
+  <!-- Load AuruAds SDK -->
+  <script src="https://auruads.com/cdn/ads.js?app_uid=YOUR_APP_ID"></script>
+  <script>
+    document.getElementById("watchAd").addEventListener("click", () => {
+      window.showAuruads()
+        .then(() => {
+          // ✅ Grant user reward here
+          alert("Congrats! You earned 50 coins 🎉");
+          // You could also call your backend:
+          // fetch('/grant-reward/', {method: 'POST'});
+        })
+        .catch(e => {
+          // ❌ Handle errors (user closed ad, no ads available, etc.)
+          console.error("Ad failed:", e);
+          alert("No ad available right now, please try again later.");
+        });
+    });
+  </script>
     <!-- Footer -->
     <footer class="bg-gray-900">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
